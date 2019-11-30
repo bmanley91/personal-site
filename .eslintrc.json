@@ -15,6 +15,7 @@
       "@typescript-eslint/eslint-plugin"
     ],
     "rules": {
-      "semi": "error"
+      "semi": "error",
+      "quotes": ["error", "single"]
     }
   }
