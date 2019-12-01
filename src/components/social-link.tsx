@@ -1,23 +1,30 @@
 import styled from '@emotion/styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export interface SocialLinkProps {
     type: string;
     link: string;
 }
 
-const Image = styled('img')`
+const SocialLinkDiv = styled('div')`
     width: 50px;
     float: left;
     padding: 1rem;
+    font-size: 50px;
+`
+
+const SocialLinkIcon = styled('a')`
+    color: white;
 `
 
 const SocialLink: React.FunctionComponent<SocialLinkProps> = (props: SocialLinkProps) => {
     return (
-        <div id={`social-link-${props.type}`}>
-            <a href={props.link} target='_blank'>
-                <Image className='img-responsive' src={`/images/${props.type}.png`} alt={`social-link-logo-${props.type}`} />
-            </a>
-        </div>
+        <SocialLinkDiv>
+            <SocialLinkIcon href={props.link} target='_blank'>
+                <FontAwesomeIcon icon={faTwitter} />
+            </SocialLinkIcon>
+        </SocialLinkDiv>
     );
 };
 
