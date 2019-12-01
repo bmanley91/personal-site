@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 const BarDiv = styled('div')`
     background-color: black;
+    overflow: auto;
 `
 
 const SocialBar = () => {
