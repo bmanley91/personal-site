@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 const IntroSectionDiv = styled('div')`
-    font-family: 'Poppins', sans-serif;
     background-color: white;
     overflow: auto;
 `
