@@ -9,8 +9,8 @@ const Home: NextPage = () => {
         <Layout title='Brian Manley - Home'>
             <IntroSection />
             <ContentList title="Stuff I've Worked On" contentCardPropArray={myStuff}/>
-            <ContentList title="Stuff I've Learned From" contentCardPropArray={coolStuff}/>
-            <ContentList title="Stuff That I Think is Cool " contentCardPropArray={learningStuff}/>
+            <ContentList title="Stuff I've Learned From" contentCardPropArray={learningStuff}/>
+            <ContentList title="Stuff That I Think is Cool " contentCardPropArray={coolStuff}/>
         </Layout>
     );
 };
