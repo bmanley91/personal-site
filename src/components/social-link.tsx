@@ -1,5 +1,9 @@
-import { SocialLinkProps } from '../types/social-link-props';
 import styled from '@emotion/styled';
+
+export interface SocialLinkProps {
+    type: string;
+    link: string;
+}
 
 const Image = styled('img')`
     width: 50px;
@@ -7,7 +11,7 @@ const Image = styled('img')`
     padding: 1rem;
 `
 
-const SocialLink: React.SFC<SocialLinkProps> = (props: SocialLinkProps) => {
+const SocialLink: React.FunctionComponent<SocialLinkProps> = (props: SocialLinkProps) => {
     return (
         <div id={`social-link-${props.type}`}>
             <a href={props.link} target='_blank'>
