@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { lookupIcon } from '../utils/icon-lookup';
 
 export interface SocialLinkProps {
     type: string;
@@ -22,7 +23,7 @@ const SocialLink: React.FunctionComponent<SocialLinkProps> = (props: SocialLinkP
     return (
         <SocialLinkDiv>
             <SocialLinkIcon href={props.link} target='_blank'>
-                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={lookupIcon(props.type)} />
             </SocialLinkIcon>
         </SocialLinkDiv>
     );
