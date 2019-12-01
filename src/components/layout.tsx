@@ -33,7 +33,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
             <Global styles={{
                 body: {
                     margin: 0,
-                    'font-family': "'Poppins', sans-serif"
+                    fontFamily: "'Poppins', sans-serif"
                 }
             }}/>
             <AppDiv>

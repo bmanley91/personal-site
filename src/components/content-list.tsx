@@ -15,7 +15,7 @@ const CardListUl = styled('ul')`
 const ContentList: React.FunctionComponent<ContentListProps> = (props) => {
     const cardList = props.contentCardPropArray.map((cardProps) => {
         return(
-            <li>
+            <li key={`content-card-${cardProps.title}`}>
                 <ContentCard 
                     title={cardProps.title}
                     body={cardProps.body}
