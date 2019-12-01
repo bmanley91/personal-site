@@ -1,12 +1,28 @@
 import Head from 'next/head';
 import { Global } from '@emotion/core';
 import SocialBar from './social-bar';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
+import styled from '@emotion/styled';
 
 export interface LayoutProps {
     title: string;
-    children?: ReactElement<any>
+    children?: ReactNode;
 }
+
+const AppDiv = styled('div')`
+    position: relative;
+    min-height: 100vh;
+`
+
+const ContentWrapper = styled('div')`
+    margin-right: 5%;
+    margin-left: 5%;
+`
+
+const Header = styled('div')`
+    height: 5px;
+    background-color: black;
+`
 
 const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
     return (
@@ -19,8 +35,13 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
                     margin: 0
                 }
             }}/>
-            {props.children}
-            <SocialBar />
+            <AppDiv>
+                <Header className='page-header' />
+                <ContentWrapper>
+                    {props.children}
+                </ContentWrapper>
+                <SocialBar />
+            </AppDiv>
         </div>
     );
 };

@@ -8,7 +8,7 @@ const BarDiv = styled('div')`
 
 const SocialBar = () => {
     return (
-        <BarDiv id='social-bar'>
+        <BarDiv className='page-footer'>
             <SocialLink type='twitter' link='https://twitter.com/bmanley91'/>
             <SocialLink type='github' link='https://github.com/bmanley91'/>
             <SocialLink type='linkedin' link='https://www.linkedin.com/in/bmanley91/'/>
