@@ -20,7 +20,7 @@ export const myStuff: ContentCardProps[] = [
     }, {
         title: 'This Site',
         body: "The website that you're looking at right now! It uses NextJs, React, and Emotion. It's hosted and deployed with Netlify.",
-        linkText: 'brian-manley.com',
-        linkURL: 'https://brian-manley.com'
+        linkText: 'Source Code',
+        linkURL: 'https://github.com/bmanley91/personal-site'
     }
 ];
