@@ -2,9 +2,9 @@ import { SocialLinkProps } from '../types/social-link-props';
 import styled from '@emotion/styled';
 
 const Image = styled('img')`
-    text-align: center;
     width: 50px;
     float: left;
+    padding: 1rem;
 `
 
 const SocialLink: React.SFC<SocialLinkProps> = (props: SocialLinkProps) => {
