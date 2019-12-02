@@ -3,7 +3,7 @@ import { Global } from '@emotion/core';
 import SocialBar from './social-bar';
 import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
-import { ThemeProvider, useTheme } from './theme-provider';
+import { useTheme } from './theme-provider';
 
 
 export interface LayoutProps {
@@ -27,8 +27,15 @@ const ContentWrapper = styled('div')`
 `
 
 const Header = styled('div')`
-    height: 5px;
     background-color: black;
+    overflow: auto;
+`
+
+const ToggleButton = styled('button')`
+    float: right;
+    padding: 5px;
+    background-color: black;
+    border: none;
 `
 
 const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
@@ -46,10 +53,11 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
                 }
             }}/>
             <AppDiv>
-                <Header className='page-header' />
-                <button onClick={() => themeState.toggle()}>
-                    { themeState.dark ? 'Switch to Light Mode' : 'Switch to Dark Mode' }
-                </button>
+                <Header className='page-header'>
+                    <ToggleButton onClick={() => themeState.toggle()}>
+                        { themeState.dark ? '☀️' : '🌙' }
+                    </ToggleButton>
+                </Header>
                 <ContentWrapper id='wrapper'>
                     {props.children}
                 </ContentWrapper>
