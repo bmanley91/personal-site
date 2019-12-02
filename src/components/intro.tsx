@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 const IntroSectionDiv = styled('div')`
-    background-color: white;
     overflow: auto;
 `
 
