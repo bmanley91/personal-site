@@ -11,9 +11,9 @@ const defaultContextData = {
 const ThemeContext = React.createContext(defaultContextData);
 const useTheme = () => React.useContext(ThemeContext);
 
-const useEffectDarkMode = () => {
+const useEffectDarkMode = (darkDefault: boolean) => {
   const [themeState, setThemeState] = React.useState({
-    dark: false,
+    dark: darkDefault,
     hasThemeMounted: false
   });
   React.useEffect(() => {
@@ -25,7 +25,9 @@ const useEffectDarkMode = () => {
 };
 
 const ThemeProvider: FunctionComponent<{children: any}> = ({ children }) => {
-  const [themeState, setThemeState]: any = useEffectDarkMode();
+  let darkDefault = getInitialDarkSetting();
+  
+  const [themeState, setThemeState]: any = useEffectDarkMode(darkDefault);
 
   if (!themeState.hasThemeMounted) {
     return <div />;
@@ -51,6 +53,15 @@ const ThemeProvider: FunctionComponent<{children: any}> = ({ children }) => {
       </ThemeContext.Provider>
     </EmotionThemeProvider>
   );
+};
+
+const getInitialDarkSetting = (): boolean => {
+  let darkDefault = false;
+  if (typeof window !== 'undefined') {
+    darkDefault = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    localStorage.setItem("dark", JSON.stringify(darkDefault));
+  }
+  return darkDefault;
 };
 
 export { ThemeProvider, useTheme };
