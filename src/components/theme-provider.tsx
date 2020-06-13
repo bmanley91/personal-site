@@ -12,7 +12,6 @@ const ThemeContext = React.createContext(defaultContextData);
 const useTheme = () => React.useContext(ThemeContext);
 
 const useEffectDarkMode = (darkDefault: boolean) => {
-  console.log(`dark default is ${darkDefault}`);
   const [themeState, setThemeState] = React.useState({
     dark: darkDefault,
     hasThemeMounted: false
