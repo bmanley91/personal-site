@@ -45,6 +45,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
         <div id='app'>
             <Head>
                 <title>{props.title}</title>
+                <meta name='Description' content="Brian Manley's personal website" />
             </Head>
             <Global styles={{
                 body: {

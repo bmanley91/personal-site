@@ -22,7 +22,7 @@ const SocialLinkIcon = styled('a')`
 const SocialLink: React.FunctionComponent<SocialLinkProps> = (props: SocialLinkProps) => {
     return (
         <SocialLinkDiv>
-            <SocialLinkIcon href={props.link} target='_blank' rel='noopener'>
+            <SocialLinkIcon href={props.link} target='_blank' rel='noopener' aria-label={ props.type }>
                 <FontAwesomeIcon icon={lookupIcon(props.type)} />
             </SocialLinkIcon>
         </SocialLinkDiv>
