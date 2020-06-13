@@ -24,7 +24,7 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
         <ContentCardDiv>
             <CardHeader>{ props.title }</CardHeader>
             <p>{ props.body }</p>
-            <a href={ props.linkURL} target='_blank'>{ props.linkText }</a>
+            <a href={ props.linkURL} target='_blank' rel='noopener'>{ props.linkText }</a>
         </ContentCardDiv>
     );
 }
