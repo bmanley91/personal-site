@@ -12,8 +12,7 @@
       "sourceType": "module"
     },
     "plugins": [
-      "@typescript-eslint/eslint-plugin",
-      "plugin:react/recommended"
+      "@typescript-eslint/eslint-plugin"
     ],
     "rules": {
       "semi": "error",
