@@ -2,6 +2,11 @@ const white = '#FFFFFF';
 const black = '#161617';
 const gray = '#F8F8F9';
 
+interface SiteTheme {
+    background: string;
+    body: string;
+}
+
 const themeLight = {
     background: gray,
     body: black
@@ -12,6 +17,6 @@ const themeDark = {
     body: white
 };
 
-const theme = (mode: string) => (mode === 'dark' ? themeDark : themeLight);
+const theme = (mode: string): SiteTheme => (mode === 'dark' ? themeDark : themeLight);
 
 export default theme;
