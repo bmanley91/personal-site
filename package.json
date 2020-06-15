@@ -6,7 +6,7 @@
   "scripts": {
     "check": "eslint \"**/*{.ts,.tsx}\"",
     "dev": "next",
-    "build": "next build && next export",
+    "build": "npm run check && next build && next export",
     "start": "serve ./out"
   },
   "keywords": [],
