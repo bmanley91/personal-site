@@ -19,7 +19,7 @@ export const myStuff: ContentCardProps[] = [
         linkURL: 'https://github.com/commercehub-oss/gatling-gradle-plugin'
     }, {
         title: 'This Site',
-        body: "The website that you're looking at right now! It uses NextJs, React, and Emotion. It's hosted and deployed with Netlify.",
+        body: 'The website that you\'re looking at right now! It uses NextJs, React, and Emotion. It\'s hosted and deployed with Netlify.',
         linkText: 'Source Code',
         linkURL: 'https://github.com/bmanley91/personal-site'
     }

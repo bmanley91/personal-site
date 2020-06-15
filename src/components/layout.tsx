@@ -15,7 +15,7 @@ const AppDiv = styled('div')`
     position: relative;
     min-height: 100vh;
     background: ${(props: any) => props.theme.background};
-`
+`;
 
 const ContentWrapper = styled('div')`
     margin-right: 5%;
@@ -24,19 +24,19 @@ const ContentWrapper = styled('div')`
     a:link, a:visited {
         color: ${(props: any) => props.theme.body};
     }
-`
+`;
 
 const Header = styled('div')`
     background-color: black;
     overflow: auto;
-`
+`;
 
 const ToggleButton = styled('button')`
     float: right;
     padding: 5px;
     background-color: black;
     border: none;
-`
+`;
 
 const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
     const themeState = useTheme();
@@ -50,12 +50,12 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
             <Global styles={{
                 body: {
                     margin: 0,
-                    fontFamily: "'Poppins', sans-serif"
+                    fontFamily: '\'Poppins\', sans-serif'
                 }
             }}/>
             <AppDiv>
                 <Header className='page-header'>
-                    <ToggleButton onClick={() => themeState.toggle()}>
+                    <ToggleButton onClick={(): void => themeState.toggle()}>
                         { themeState.dark ? '☀️' : '🌙' }
                     </ToggleButton>
                 </Header>

@@ -1,67 +1,77 @@
-import React from "react";
-import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
+import React, { SetStateAction, Dispatch, ReactNode } from 'react';
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import theme from '../resources/theme';
 import { FunctionComponent } from 'react';
 
+interface ThemeState {
+  dark: boolean;
+  hasThemeMounted: boolean;
+}
+
+interface ThemeContext { 
+  dark: boolean; 
+  toggle: () => void;
+}
+
 const defaultContextData = {
   dark: true,
-  toggle: () => { console.log('nope')}
+  toggle: (): void => { console.log('nope');}
 };
 
-const ThemeContext = React.createContext(defaultContextData);
-const useTheme = () => React.useContext(ThemeContext);
+const Context = React.createContext(defaultContextData);
+const useTheme = (): ThemeContext  => React.useContext(Context);
 
-const useEffectDarkMode = (darkDefault: boolean) => {
+const useEffectDarkMode = (darkDefault: boolean): [ThemeState, Dispatch<SetStateAction<ThemeState>>] => {
   const [themeState, setThemeState] = React.useState({
     dark: darkDefault,
     hasThemeMounted: false
   });
   React.useEffect(() => {
-    const lsDark = localStorage.getItem("dark") === "true";
+    const lsDark = localStorage.getItem('dark') === 'true';
     setThemeState({ ...themeState, dark: lsDark, hasThemeMounted: true });
   }, []);
 
   return [themeState, setThemeState];
 };
 
-const ThemeProvider: FunctionComponent<{children: any}> = ({ children }) => {
-  let darkDefault = getInitialDarkSetting();
+const getInitialDarkSetting = (): boolean => {
+  let darkDefault = false;
+  if (typeof window !== 'undefined') {
+    darkDefault = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    localStorage.setItem('dark', JSON.stringify(darkDefault));
+  }
+  return darkDefault;
+};
+
+const ThemeProvider: FunctionComponent<{children: ReactNode}> = ({ children }) => {
+  const darkDefault = getInitialDarkSetting();
   
-  const [themeState, setThemeState]: any = useEffectDarkMode(darkDefault);
+  const [themeState, setThemeState]: [ThemeState, Dispatch<SetStateAction<ThemeState>>] = useEffectDarkMode(darkDefault);
 
   if (!themeState.hasThemeMounted) {
     return <div />;
   }
 
-  const toggle = () => {
+  const toggle = (): void => {
     const dark = !themeState.dark;
-    localStorage.setItem("dark", JSON.stringify(dark));
+    localStorage.setItem('dark', JSON.stringify(dark));
     setThemeState({ ...themeState, dark });
   };
 
-  const computedTheme = themeState.dark ? theme("dark") : theme("light");
+  const computedTheme = themeState.dark ? theme('dark') : theme('light');
 
   return (
     <EmotionThemeProvider theme={computedTheme}>
-      <ThemeContext.Provider
+      <Context.Provider
         value={{
           dark: themeState.dark,
           toggle
         }}
       >
         {children}
-      </ThemeContext.Provider>
+      </Context.Provider>
     </EmotionThemeProvider>
   );
-};
-
-const getInitialDarkSetting = (): boolean => {
-  let darkDefault = false;
-  if (typeof window !== 'undefined') {
-    darkDefault = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    localStorage.setItem("dark", JSON.stringify(darkDefault));
-  }
-  return darkDefault;
 };
 
 export { ThemeProvider, useTheme };

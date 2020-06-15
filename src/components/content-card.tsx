@@ -1,4 +1,5 @@
-import styled from "@emotion/styled-base";
+import React from 'react';
+import styled from '@emotion/styled-base';
 
 export interface ContentCardProps {
     title: string;
@@ -13,20 +14,20 @@ const ContentCardDiv = styled('div')`
     border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
-`
+`;
 
 const CardHeader = styled('h2')`
     margin: 0;
-`
+`;
 
 const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
     return (
         <ContentCardDiv>
             <CardHeader>{ props.title }</CardHeader>
             <p>{ props.body }</p>
-            <a href={ props.linkURL} target='_blank' rel='noopener'>{ props.linkText }</a>
+            <a href={ props.linkURL} target='_blank' rel='noreferrer'>{ props.linkText }</a>
         </ContentCardDiv>
     );
-}
+};
 
 export default ContentCard;

@@ -3,13 +3,12 @@ import { faTwitter, IconDefinition, faGithub, faLinkedin } from '@fortawesome/fr
 export const lookupIcon = (name: string): IconDefinition => {
     switch(name) {
         case 'twitter':
-            return faTwitter
+            return faTwitter;
         case 'github':
             return faGithub;
         case 'linkedin':
             return faLinkedin;
         default:
             return faTwitter;
-    }
-    
-}
+    }  
+};
