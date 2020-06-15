@@ -1,12 +1,12 @@
-import SocialLink from "./social-link"
+import SocialLink from './social-link';
 import styled from '@emotion/styled';
 
 const BarDiv = styled('div')`
     background-color: black;
     overflow: auto;
-`
+`;
 
-const SocialBar = () => {
+const SocialBar = (): JSX.Element => {
     return (
         <BarDiv className='page-footer'>
             <SocialLink type='twitter' link='https://twitter.com/bmanley91'/>
@@ -14,6 +14,6 @@ const SocialBar = () => {
             <SocialLink type='linkedin' link='https://www.linkedin.com/in/bmanley91/'/>
         </BarDiv>
     );
-}
+};
 
 export default SocialBar;

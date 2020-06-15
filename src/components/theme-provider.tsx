@@ -1,11 +1,11 @@
-import React from "react";
-import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
+import React from 'react';
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import theme from '../resources/theme';
 import { FunctionComponent } from 'react';
 
 const defaultContextData = {
   dark: true,
-  toggle: () => { console.log('nope')}
+  toggle: () => { console.log('nope');}
 };
 
 const ThemeContext = React.createContext(defaultContextData);
@@ -17,15 +17,24 @@ const useEffectDarkMode = (darkDefault: boolean) => {
     hasThemeMounted: false
   });
   React.useEffect(() => {
-    const lsDark = localStorage.getItem("dark") === "true";
+    const lsDark = localStorage.getItem('dark') === 'true';
     setThemeState({ ...themeState, dark: lsDark, hasThemeMounted: true });
   }, []);
 
   return [themeState, setThemeState];
 };
 
+const getInitialDarkSetting = (): boolean => {
+  let darkDefault = false;
+  if (typeof window !== 'undefined') {
+    darkDefault = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    localStorage.setItem('dark', JSON.stringify(darkDefault));
+  }
+  return darkDefault;
+};
+
 const ThemeProvider: FunctionComponent<{children: any}> = ({ children }) => {
-  let darkDefault = getInitialDarkSetting();
+  const darkDefault = getInitialDarkSetting();
   
   const [themeState, setThemeState]: any = useEffectDarkMode(darkDefault);
 
@@ -35,11 +44,11 @@ const ThemeProvider: FunctionComponent<{children: any}> = ({ children }) => {
 
   const toggle = () => {
     const dark = !themeState.dark;
-    localStorage.setItem("dark", JSON.stringify(dark));
+    localStorage.setItem('dark', JSON.stringify(dark));
     setThemeState({ ...themeState, dark });
   };
 
-  const computedTheme = themeState.dark ? theme("dark") : theme("light");
+  const computedTheme = themeState.dark ? theme('dark') : theme('light');
 
   return (
     <EmotionThemeProvider theme={computedTheme}>
@@ -53,15 +62,6 @@ const ThemeProvider: FunctionComponent<{children: any}> = ({ children }) => {
       </ThemeContext.Provider>
     </EmotionThemeProvider>
   );
-};
-
-const getInitialDarkSetting = (): boolean => {
-  let darkDefault = false;
-  if (typeof window !== 'undefined') {
-    darkDefault = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    localStorage.setItem("dark", JSON.stringify(darkDefault));
-  }
-  return darkDefault;
 };
 
 export { ThemeProvider, useTheme };

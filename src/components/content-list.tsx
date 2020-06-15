@@ -10,7 +10,7 @@ export interface ContentListProps {
 const CardListUl = styled('ul')`
     list-style: none;
     padding-inline-start: 0;
-`
+`;
 
 const ContentList: React.FunctionComponent<ContentListProps> = (props) => {
     const cardList = props.contentCardPropArray.map((cardProps) => {
@@ -24,7 +24,7 @@ const ContentList: React.FunctionComponent<ContentListProps> = (props) => {
                 />
             </li>
         );
-    })
+    });
 
     return(
         <div>
