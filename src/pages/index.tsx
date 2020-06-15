@@ -1,3 +1,4 @@
+import React from 'react';
 import { NextPage } from 'next';
 import IntroSection from '../components/intro';
 import Layout from '../components/layout';

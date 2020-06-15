@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContentCardProps } from './content-card';
 import ContentCard from './content-card';
 import styled from '@emotion/styled-base';

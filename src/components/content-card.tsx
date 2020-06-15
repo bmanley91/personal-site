@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled-base';
 
 export interface ContentCardProps {
@@ -24,7 +25,7 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
         <ContentCardDiv>
             <CardHeader>{ props.title }</CardHeader>
             <p>{ props.body }</p>
-            <a href={ props.linkURL} target='_blank' rel='noopener'>{ props.linkText }</a>
+            <a href={ props.linkURL} target='_blank' rel='noreferrer'>{ props.linkText }</a>
         </ContentCardDiv>
     );
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import SocialLink from './social-link';
 import styled from '@emotion/styled';
 

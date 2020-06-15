@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { lookupIcon } from '../utils/icon-lookup';
