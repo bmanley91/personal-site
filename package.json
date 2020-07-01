@@ -7,7 +7,9 @@
     "check": "eslint \"**/*{.ts,.tsx}\"",
     "dev": "next",
     "build": "npm run check && next build && next export",
-    "start": "serve ./out"
+    "start": "serve ./out",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -25,12 +27,17 @@
     "serve": "^11.3.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.2.1",
+    "@types/jest": "^26.0.0",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.13",
     "@typescript-eslint/eslint-plugin": "^2.9.0",
     "@typescript-eslint/parser": "^2.9.0",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.20.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
     "typescript": "^3.7.2"
   }
 }

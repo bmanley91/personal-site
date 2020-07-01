@@ -34,7 +34,7 @@ const useEffectDarkMode = (darkDefault: boolean): [ThemeState, Dispatch<SetState
   return [themeState, setThemeState];
 };
 
-const getInitialDarkSetting = (): boolean => {
+export const getInitialDarkSetting = (): boolean => {
   let darkDefault = false;
   if (typeof window !== 'undefined') {
     darkDefault = window.matchMedia('(prefers-color-scheme: dark)').matches;
