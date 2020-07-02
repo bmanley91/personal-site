@@ -24,7 +24,7 @@ const IntroSection: React.FunctionComponent = () => {
         <IntroSectionDiv>
             <LeftSection>
                 <h1>Brian Manley</h1>
-                <h2>Software Engineer</h2>
+                <h2>Product Engineer</h2>
                 <h3>New York, NY</h3>
             </LeftSection>
             <RightSection>
