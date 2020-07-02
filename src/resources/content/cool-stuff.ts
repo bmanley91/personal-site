@@ -9,7 +9,7 @@ export const coolStuff: ContentCardProps[] = [
     }, {
         title: 'Slick Carousel',
         body: 'The carousel component used to display these cards on mobile browsers.',
-        linkText: 'npm',
+        linkText: 'npm link',
         linkURL: 'https://www.npmjs.com/package/react-slick'
     }
 ];
