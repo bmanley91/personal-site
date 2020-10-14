@@ -7,6 +7,11 @@ export const myStuff: ContentCardProps[] = [
         linkText: 'Check it out on the App Store!',
         linkURL: 'https://apps.apple.com/app/id1527783063'
     }, {
+        title: 'Cheatsheet',
+        body: 'A common question I\'ll get from new enginners looking to interview is what I\'d recommend as a resource to study up on data structures, algorithms, and programming practices. Cracking the Coding Interview immediately comes to mind, but I wanted to create a more digestible solution.',
+        linkText: 'Check out Cheatsheet on Github',
+        linkURL: 'https://github.com/bmanley91/cheatsheet'
+    }, {
         title: 'Express i18n Made Easy',
         body: 'A dev.to article I wrote outlining how to internationalize an Express API.',
         linkText: 'Express i18n Made Easy',
