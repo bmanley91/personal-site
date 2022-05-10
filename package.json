@@ -19,21 +19,21 @@
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "emotion-theming": "^10.0.19",
-    "next": "^9.4.4",
-    "react": "^16.12.0",
-    "react-device-detect": "^1.13.1",
-    "react-dom": "^16.12.0",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-slick": "^0.26.1",
     "serve": "^11.3.2"
   },
   "devDependencies": {
-    "@types/node": "^12.12.14",
-    "@types/react": "^16.9.13",
-    "@types/react-slick": "^0.23.4",
-    "@typescript-eslint/eslint-plugin": "^2.9.0",
-    "@typescript-eslint/parser": "^2.9.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-react": "^7.20.0",
-    "typescript": "^3.7.2"
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.9",
+    "@types/react-slick": "^0.23.8",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-react": "^7.29.4",
+    "react-device-detect": "^2.2.2",
+    "typescript": "^4.6.4"
   }
 }

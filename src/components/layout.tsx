@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import Head from 'next/head';
 import { Global } from '@emotion/core';
 import SocialBar from './social-bar';
