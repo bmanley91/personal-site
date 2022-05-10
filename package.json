@@ -26,6 +26,7 @@
     "serve": "^11.3.2"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^12.1.6",
     "@types/node": "^17.0.31",
     "@types/react": "^18.0.9",
     "@types/react-slick": "^0.23.8",
