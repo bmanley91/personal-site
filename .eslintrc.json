@@ -23,5 +23,10 @@
       "semi": "error",
       "quotes": ["error", "single"],
       "react/prop-types": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "18"
+      }
     }
   }

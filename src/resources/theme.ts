@@ -2,7 +2,7 @@ const white = '#FFFFFF';
 const black = '#161617';
 const gray = '#F8F8F9';
 
-interface SiteTheme {
+export interface SiteTheme {
     background: string;
     body: string;
 }

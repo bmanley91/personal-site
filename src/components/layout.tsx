@@ -1,31 +1,17 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import Head from 'next/head';
 import { Global } from '@emotion/core';
 import SocialBar from './social-bar';
 import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from './theme-provider';
+import ContentWrapper from './content-wrapper';
+import SiteWrapper from './site-wrapper';
 
 
 export interface LayoutProps {
     title: string;
     children?: ReactNode;
 }
-
-const AppDiv = styled('div')`
-    position: relative;
-    min-height: 100vh;
-    background: ${(props: any) => props.theme.background};
-`;
-
-const ContentWrapper = styled('div')`
-    margin-right: 5%;
-    margin-left: 5%;
-    color: ${(props: any) => props.theme.body};
-    a:link, a:visited {
-        color: ${(props: any) => props.theme.body};
-    }
-`;
 
 const Header = styled('div')`
     background-color: black;
@@ -54,7 +40,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
                     fontFamily: '\'Poppins\', sans-serif'
                 }
             }}/>
-            <AppDiv>
+            <SiteWrapper>
                 <Header className='page-header'>
                     <ToggleButton onClick={(): void => themeState.toggle()}>
                         { themeState.dark ? '☀️' : '🌙' }
@@ -64,7 +50,7 @@ const Layout: React.FunctionComponent<LayoutProps> = (props: LayoutProps) => {
                     {props.children}
                 </ContentWrapper>
                 <SocialBar />
-            </AppDiv>
+            </SiteWrapper>
         </div>
     );
 };
