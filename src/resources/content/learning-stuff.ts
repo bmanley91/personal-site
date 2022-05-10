@@ -7,10 +7,10 @@ export const learningStuff: ContentCardProps[] = [
         linkText: 'Check out the book here',
         linkURL: 'https://resilient-management.com/'
     }, {
-        title: 'Zero to One',
-        body: 'Peter Thiel describes how a startup can be truely successful and the difference between the impacts of copying what\'s been done before and creating something entirely new. Reading this book has helped me better understand exactly what successful startups have done to become and stay successful.',
-        linkText: 'Pick it up here',
-        linkURL: 'https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296'
+        title: 'Strategic Monoliths and Microservices',
+        body: 'The authors breakdown the application of monlith and microservice patterns, showing that monoliths aren\'t always bad and microservices aren\'t always good.',
+        linkText: 'Check out the book here',
+        linkURL: 'https://www.goodreads.com/book/show/55782292-strategic-monoliths-and-microservices?ac=1&from_search=true&qid=J7bpA7eMYD&rank=1'
     }, {
         title: 'Kent C. Dodds',
         body: 'I\'ve referenced Kent\'s work more times than I can count when talking about writing testable software. His article about the "Testing Trophy" fundamentally changed how I thought about testing my code.',
