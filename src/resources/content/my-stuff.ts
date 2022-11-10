@@ -2,15 +2,15 @@ import { ContentCardProps } from '../../components/content-card';
 
 export const myStuff: ContentCardProps[] = [
     {
+        title: 'Pace Checker',
+        body: 'A simple site to calculate pace or time ',
+        linkText: 'Try it out!',
+        linkURL: 'http://pace-checker'
+    }, {
         title: 'Effective Engineering Interviews',
         body: 'To hire engineers you need a way to make sure they’re a fit for your team. Doing so efficiently and effectively is hard. This publication aims to dive into common engineering interview practices, see what makes them work, and how they can be improved.',
         linkText: 'Check it out on Medium here',
         linkURL: 'https://medium.com/effective-engineering-interviews'
-    }, {
-        title: 'Headwind Golf',
-        body: 'An iOS app that lets golfers know how the wind will affect their game. The app is built using SwiftUI and pulls data from the OpenWeather API.',
-        linkText: 'Check it out on the App Store!',
-        linkURL: 'https://apps.apple.com/app/id1527783063'
     }, {
         title: 'Cheatsheet',
         body: 'A common question I\'ll get from new enginners looking to interview is what I\'d recommend as a resource to study up on data structures, algorithms, and programming practices. Cracking the Coding Interview immediately comes to mind, but I wanted to create a more digestible solution.',
