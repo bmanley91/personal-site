@@ -5,7 +5,7 @@ export const myStuff: ContentCardProps[] = [
         title: 'Pace Checker',
         body: 'A simple site to calculate pace or time ',
         linkText: 'Try it out!',
-        linkURL: 'http://pace-checker'
+        linkURL: 'https://pace-checker'
     }, {
         title: 'Effective Engineering Interviews',
         body: 'To hire engineers you need a way to make sure they’re a fit for your team. Doing so efficiently and effectively is hard. This publication aims to dive into common engineering interview practices, see what makes them work, and how they can be improved.',
